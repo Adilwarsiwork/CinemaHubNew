@@ -2,15 +2,15 @@ import React from "react";
 import MuxPlayer from "@mux/mux-player-react";
 
 const VideoPlayer = (props) => {
-  let text = props.videoId;
+  let vidRef = props.videoId;
 
-  const myArray = text.split("-");
+  const myArray = vidRef.split("-");
 
-  let z = "";
-  for (let x of myArray) {
-    z += x;
+  let ref = "";
+  for (let arr of myArray) {
+    ref += arr;
   }
-  console.log(z);
+  console.log(ref);
 
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 90000) + 10000; // Generates a random 5-digit number
