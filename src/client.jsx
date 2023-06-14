@@ -32,7 +32,7 @@ export async function getPosts(Data) {
     return result;
   } else {
     const query = `*[_type=="news"]{newsTitle,newsLongDescription,newsShortDescription,
-                   slug,"newsImage":newsImage.asset->url}`;
+                   slug,video,"newsImage":newsImage.asset->url}`;
     result = await client.fetch(query);
     // console.log(result);
     return result;
