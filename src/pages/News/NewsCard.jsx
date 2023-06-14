@@ -55,7 +55,7 @@ const NewsCard = (props) => {
           </p>
         </div>
         <div className="buttonDiv ">
-          <button type="button" id="playBtn">
+          <button type="button" id="playBtn" onClick={handleClick}>
             Play Video
           </button>
 
