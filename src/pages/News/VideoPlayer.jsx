@@ -1,5 +1,6 @@
 import React from "react";
 import MuxPlayer from "@mux/mux-player-react";
+import { ImCross } from "react-icons/im";
 
 const VideoPlayer = (props) => {
   let vidRef = props.videoId;
@@ -40,7 +41,8 @@ const VideoPlayer = (props) => {
 
   const watermarkPosition = generateRandomPosition(); // Generate random position for the watermark
 
-  const handleWatchLiveClick = () => {
+  const handleWatchLiveClick = (event) => {
+    // event.stopPropagation();
     // Handle the button click event here
     // You can redirect to the desired URL or perform any other action
   };
@@ -49,7 +51,7 @@ const VideoPlayer = (props) => {
     <div style={{ position: "relative" }}>
       <MuxPlayer
         streamType="on-demand"
-        playbackId="6CapG0201R7pzBQSlLv02LPifzF2ImF01Finl802OtejS02Fo"
+        playbackId="EcHgOK9coz5K4rjSwOkoE7Y7O01201YMIC200RI6lNxnhs"
         metadata={{
           video_id: "video-id-54321",
           video_title: "Test video title",
@@ -57,16 +59,11 @@ const VideoPlayer = (props) => {
         }}
       />
       <div style={watermarkStyle}>{watermarkText}</div>
-      <button
-        onClick={handleWatchLiveClick}
-        style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          paddingBlock: "5px",
-          paddingInline: "10px",
-        }}
-      >
+
+      <div className="cutButton" onClick={handleWatchLiveClick}>
+        <ImCross></ImCross>
+      </div>
+      <button className="watchLive" onClick={handleWatchLiveClick}>
         Watch live
       </button>
     </div>

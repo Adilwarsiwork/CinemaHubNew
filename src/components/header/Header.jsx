@@ -40,48 +40,45 @@ const Header = () => {
     setShowSearch(false);
   };
 
-  const navigationHandler = (type) => {
-    if (type === "movie") {
-      navigate("/explore/movie");
-    } else if (type === "contact") {
-      navigate("/contact");
-    } else if (type === "news") {
-      navigate("/news");
-    } else if (type === "plans") {
-      navigate("/plans");
-    } else if (type === "category") {
-      navigate("/categories");
-    } else {
-      navigate("/explore/tv");
-    }
+  const navigationHandler = (route) => {
+    navigate(route);
     setMobileMenu(false);
   };
 
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo" onClick={() => navigate("/")}>
+        <div className="logo" onClick={() => navigationHandler("/")}>
           <span>CINEMAHUB</span>
         </div>
         <ul className="menuItems">
-          <li className="menuItem" onClick={() => navigationHandler("movie")}>
+          <li
+            className="menuItem"
+            onClick={() => navigationHandler("/explore/movie")}
+          >
             Movies
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("tv")}>
+          <li
+            className="menuItem"
+            onClick={() => navigationHandler("/explore/tv")}
+          >
             TV Shows
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("contact")}>
+          <li
+            className="menuItem"
+            onClick={() => navigationHandler("/contact")}
+          >
             Contact
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("news")}>
+          <li className="menuItem" onClick={() => navigationHandler("/news")}>
             News
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("plans")}>
+          <li className="menuItem" onClick={() => navigationHandler("/plans")}>
             Plans
           </li>
           <li
             className="menuItem"
-            onClick={() => navigationHandler("category")}
+            onClick={() => navigationHandler("/categories")}
           >
             Category
           </li>

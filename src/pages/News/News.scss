@@ -28,6 +28,27 @@
     height: 100%;
     display: block;
   }
+
+  .cutButton {
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    font-weight: 500;
+    padding-block: 5px;
+    padding-inline: 10px;
+    color: white;
+  }
+
+  .watchLive {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.4p;
+  }
 }
 
 .newsInfo {
